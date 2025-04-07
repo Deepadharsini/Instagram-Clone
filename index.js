@@ -1,22 +1,26 @@
-const jsonServer = require('json-server')
-const path = require('path')
-const cors = require('cors')
+import jsonServer from 'json-server'
+import path from 'path'
+import express from 'express'
+import cors from 'cors'
+import { fileURLToPath } from 'url'
+
+// Needed to replicate __dirname
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 const server = jsonServer.create()
 const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
 
-server.use(cors()) // Allow CORS
+server.use(cors())
 
-// ✅ Serve static files from 'public' folder
-server.use('/data/assets', jsonServer.defaults(), jsonServer.router('public'))
-
-// Or use express-style:
-server.use('/data/assets', require('express').static(path.join(__dirname, 'data/assets')))
+// Serve static files like images from 'data/assets'
+server.use('/data/assets', express.static(path.join(__dirname, 'data/assets')))
 
 server.use(middlewares)
 server.use(router)
 
 const PORT = process.env.PORT || 3000
 server.listen(PORT, () => {
-  console.log(`JSON Server is running on port ${PORT}`)
+  console.log(`JSON Server running on port ${PORT}`)
 })
