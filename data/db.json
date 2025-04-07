@@ -119,12 +119,16 @@
   ],
   "followers": [
     {
+      "id": "107",
+      "username": "selenaGomez"
+    },
+    {
       "id": "108",
       "username": "born_to_win"
     },
     {
-      "id": "107",
-      "username": "selenaGomez"
+      "id": "106",
+      "username": "cristiano_22"
     }
   ]
 }
