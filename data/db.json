@@ -1,0 +1,134 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "user": {
+        "id": 101,
+        "username": "john_doe",
+        "profile_pic": "src/assets/profile_pic_1.jpeg"
+      },
+      "image": "src/assets/sunset.jpeg",
+      "caption": "Beautiful sunset 🌅 #Nature",
+      "likes": 120,
+      "comments": [
+        {
+          "user": "alice_wonder",
+          "comment": "Wow! Amazing shot! 📸"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "user": {
+        "id": 102,
+        "username": "emma_watson",
+        "profile_pic": "src/assets/profile_pic_2.jpeg"
+      },
+      "image": "src/assets/mug.jpeg",
+      "caption": "Coffee time ☕ with a good book 📖",
+      "likes": 340,
+      "comments": [
+        {
+          "user": "booklover_98",
+          "comment": "Perfect combo!"
+        },
+        {
+          "user": "choco_fan",
+          "comment": "Where did you get that mug? 😍"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "user": {
+        "id": 103,
+        "username": "mike_king",
+        "profile_pic": "src/assets/profile_pic_3.jpg"
+      },
+      "image": "src/assets/coding.jpeg",
+      "caption": "Late night coding 💻🔥 #DevLife",
+      "likes": 220,
+      "comments": [
+        {
+          "user": "code_master",
+          "comment": "Respect! 👏"
+        }
+      ]
+    }
+  ],
+  "profile": {
+    "id": 101,
+    "username": "Dharshh__",
+    "profile_pic": "src/assets/img3.jpg"
+  },
+  "suggestions": [
+    {
+      "id": "105",
+      "username": "emmi_mosh_34",
+      "profile_pic": "src/assets/profile_pic_1.jpeg"
+    },
+    {
+      "id": "106",
+      "username": "cristiano_22",
+      "profile_pic": "src/assets/profile_pic_2.jpeg"
+    },
+    {
+      "id": "107",
+      "username": "selenaGomez",
+      "profile_pic": "src/assets/img1.jpg"
+    },
+    {
+      "id": "108",
+      "username": "born_to_win",
+      "profile_pic": "src/assets/img2.jpeg"
+    },
+    {
+      "id": "109",
+      "username": "art.lovers_community",
+      "profile_pic": "src/assets/img1.jpg"
+    }
+  ],
+  "stories": [
+    {
+      "id": "1",
+      "user": {
+        "id": 101,
+        "username": "john_doe",
+        "profile_pic": "src/assets/profile_pic_1.jpeg"
+      },
+      "image": "/src/assets/img1.jpg"
+    },
+    {
+      "id": "2",
+      "user": {
+        "id": 102,
+        "username": "emma_watson",
+        "profile_pic": "src/assets/profile_pic_2.jpeg"
+      },
+      "image": "/src/assets/img2.jpeg"
+    },
+    {
+      "id": "3",
+      "user": {
+        "id": 103,
+        "username": "mike_king",
+        "profile_pic": "src/assets/profile_pic_3.jpg"
+      },
+      "image": "/src/assets/img3.jpg"
+    }
+  ],
+  "followers": [
+    {
+      "id": "101",
+      "username": "john_doe"
+    },
+    {
+      "id": "108",
+      "username": "born_to_win"
+    },
+    {
+      "id": "107",
+      "username": "selenaGomez"
+    }
+  ]
+}

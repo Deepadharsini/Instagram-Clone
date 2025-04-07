@@ -1,0 +1,29 @@
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+function Stories() {
+  const navigate =useNavigate();
+  const [stories,setStories] =useState([]);
+  useEffect(()=>{
+      fetch('http://localhost:3000/stories')
+      .then(response=>response.json())
+      .then(data=>setStories(data))
+      .catch(error=>console.log(error));
+  },[]);
+    let tot =0;
+  return (
+    <div className='story d-flex'>
+      <div className='d-none'>{tot=stories.length}</div>
+        {stories.length>0?(
+          stories.map((story)=>(
+          <div key={story.id} className='mx-1' onClick={()=>{navigate(`/stories/${story.id}/${tot}`)}}>
+            <div className="gradientborder">
+              <img src={story.user.profile_pic} alt="dp" className="story-dp rounded-circle"></img>
+             </div>
+            <p className=" user text-truncate" style={{width:"50px"}} >{story.user.username}</p>
+          </div>)
+        )) :(<p>Loading...</p>)}
+    </div>
+  )
+}
+
+export default Stories
