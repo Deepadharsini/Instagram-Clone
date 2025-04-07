@@ -4,7 +4,7 @@ function Stories() {
   const navigate =useNavigate();
   const [stories,setStories] =useState([]);
   useEffect(()=>{
-      fetch('http://localhost:3000/stories')
+    fetch(`${import.meta.env.VITE_API_URL}/stories`)
       .then(response=>response.json())
       .then(data=>setStories(data))
       .catch(error=>console.log(error));

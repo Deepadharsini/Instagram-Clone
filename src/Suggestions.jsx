@@ -15,7 +15,10 @@ function Suggestions() {
       .catch(error=>console.log(error));
    },[]);
    const handleFollow =async(id,username)=>{
-      axios.post('http://localhost:3000/followers',{"id":id,"username":username})
+    axios.post(`${import.meta.env.VITE_API_URL}/followers`, {
+      id,
+      username
+    })
       .then(alert(`You are following ${username}now!!`))
       .catch(err=>console.log(err));
     } 

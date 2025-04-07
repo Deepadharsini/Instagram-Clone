@@ -5,12 +5,12 @@ function Profile() {
     const[followers,setFollowers]=useState([]);
     const [unfollowed,setUnfollowed] =useState();
     useEffect(()=>{
-        axios.get('http://localhost:3000/profile')
+      axios.get(`${import.meta.env.VITE_API_URL}/stories`)
            .then(response =>{
             setProfile(response.data);
             })
             .catch(err=>console.log(err))
-        axios.get('http://localhost:3000/followers')
+            axios.get(`${import.meta.env.VITE_API_URL}/followers`)
             .then(data=>setFollowers(data.data))
             .catch(err=>console.log(err))
 
@@ -19,12 +19,12 @@ function Profile() {
           setProfile((prev)=>({...prev,[e.target.name]:e.target.value}))
    }
    const  handleUpdate= async()=>{
-         axios.put('http://localhost:3000/profile',profile)
+         axios.put(`${import.meta.env.VITE_API_URL}/profile`,profile)
          .then(()=>console.log("Updated"))
          .catch(error =>console.log(error));
    }
-   const handleUnfollow = async(id,e)=>{
-    axios.delete(`http://localhost:3000/followers/${id}`)
+   const handleUnfollow = async(id)=>{
+    axios.delete(`${import.meta.env.VITE_API_URL}/followers/${id}`)
     .then(setUnfollowed(!unfollowed))
     .then(alert(`You unfollowed now!!`))
     .catch(err=>console.log(err))

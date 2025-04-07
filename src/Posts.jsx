@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 function Posts() {
     const [posts,setPosts]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:3000/posts')
+        fetch(`${import.meta.env.VITE_API_URL}/posts`)
         .then(response => response.json())
         .then(data => setPosts(data))
         .catch(error =>console.log(error));

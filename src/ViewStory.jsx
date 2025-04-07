@@ -5,7 +5,7 @@ function ViewStory() {
     const[story,setStory]=useState(null);
     const navigate = useNavigate();
     useEffect(()=>{
-        fetch(`http://localhost:3000/stories/${id}`)
+      fetch(`${import.meta.env.VITE_API_URL}/stories/${id}`)
         .then(response=>response.json())
         .then(data =>setStory(data))
         .catch(error=>console.log(error))
@@ -17,9 +17,14 @@ function ViewStory() {
     <div>
         {story ? (
            <div className='d-flex justify-content-center align-items-center'> 
-           <Link to={`http://localhost:5173/stories/${Number(id)-1}/${tot}`}><i className="bi bi-arrow-left-circle-fill"></i></Link>
+          <Link to={`/stories/${Number(id) - 1}/${tot}`}>
+  <i className="bi bi-arrow-left-circle-fill"></i>
+</Link>
+
            <img className="vh-100" src={story.image} alt="noImage"></img>
-           <Link to={`http://localhost:5173/stories/${Number(id)+1}/${tot}`}><i className="bi bi-arrow-right-circle-fill"></i></Link>
+           <Link to={`/stories/${Number(id) + 1}/${tot}`}>
+  <i className="bi bi-arrow-right-circle-fill"></i>
+</Link>
            </div>
         ) :(<p>loading...</p>)}
     </div>
